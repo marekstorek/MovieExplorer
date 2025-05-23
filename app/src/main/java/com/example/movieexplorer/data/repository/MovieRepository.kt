@@ -28,7 +28,7 @@ class MovieRepository(private val movieDao: MovieDao, private val movieApiServic
             val moviesList: MutableList<MovieSummary> = mutableListOf()
             var responseCount = 0
             for (i in 1..calls){
-                val responseSearch = movieApiService.searchMovies(search = query, page = i)
+                val responseSearch = movieApiService.searchMovies(search = query.trim(), page = i)
                 if (responseSearch.response == "False") {
                     emit(Resource.Error(responseSearch.error ?: "Something went wrong"))
                     return@flow
