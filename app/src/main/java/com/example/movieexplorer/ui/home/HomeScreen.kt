@@ -1,11 +1,10 @@
 package com.example.movieexplorer.ui.home
 
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -24,7 +23,7 @@ fun HomeScreen(navController: NavController) {
     val viewModel: HomeViewModel = viewModel(factory = AppViewModelProvider.Factory)
 
     Column(
-        modifier = Modifier.scrollable(rememberScrollState(), orientation = Orientation.Vertical),
+        modifier = Modifier.verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
         val recentMoviesState by viewModel.recentMoviesState.collectAsState()
