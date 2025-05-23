@@ -22,6 +22,11 @@ A modern **movie browsing** app built with **Jetpack Compose** that allows users
 
 ---
 
+## Demo 🎥
+
+<img src="screenshots/Recording.gif" alt="GIF" width="40%">
+
+---
 
 ## Tech Stack 🛠️
 
